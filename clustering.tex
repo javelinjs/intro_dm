@@ -1,0 +1,388 @@
+\documentclass[8pt]{article}
+\usepackage{graphicx} % more modern
+%\usepackage{times}
+\usepackage{helvet}
+\usepackage{courier}
+\usepackage{epsf}
+\usepackage{amsmath,amssymb,amsfonts,verbatim}
+\usepackage{subfigure}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{latexsym}
+\usepackage{algpseudocode}
+\usepackage{algorithm}
+%\usepackage{algorithmic}
+\usepackage{multirow}
+\usepackage{xcolor}
+
+\usepackage{bm}
+\usepackage{fourier}
+\usepackage{enumerate}
+\usepackage{extarrows}
+\usepackage{hyperref}
+
+\newcommand{\trinorm}{{\;\left\vert\left\vert\left\vert\!\;}}
+\def\abovespace{\abovestrut{0.20in}}
+\def\aroundspace{\abovestrut{0.20in}\belowstrut{0.10in}}
+\def\belowspace{\belowstrut{0.10in}}
+\def\abovestrut#1{\rule[0in]{0in}{#1}\ignorespaces}
+\def\belowstrut#1{\rule[-#1]{0in}{#1}\ignorespaces}
+
+\def\A{{\bf A}}
+\def\a{{\bf a}}
+\def\B{{\bf B}}
+\def\b{{\bf b}}
+\def\C{{\bf C}}
+\def\c{{\bf c}}
+\def\D{{\bf D}}
+\def\d{{\bf d}}
+\def\E{{\bf E}}
+\def\e{{\bf e}}
+\def\F{{\bf F}}
+\def\f{{\bf f}}
+\def\G{{\bf G}}
+\def\g{{\bf g}}
+\def\k{{\bf k}}
+\def\K{{\bf K}}
+\def\H{{\bf H}}
+\def\I{{\bf I}}
+\def\L{{\bf L}}
+\def\M{{\bf M}}
+\def\m{{\bf m}}
+\def\n{{\bf n}}
+\def\N{{\bf N}}
+\def\BP{{\bf P}}
+\def\R{{\bf R}}
+\def\BS{{\bf S}}
+\def\s{{\bf s}}
+\def\t{{\bf t}}
+\def\T{{\bf T}}
+\def\U{{\bf U}}
+\def\u{{\bf u}}
+\def\V{{\bf V}}
+\def\v{{\bf v}}
+\def\W{{\bf W}}
+\def\w{{\bf w}}
+\def\X{{\bf X}}
+\def\Y{{\bf Y}}
+\def\Q{{\bf Q}}
+\def\x{{\bf x}}
+\def\y{{\bf y}}
+\def\Z{{\bf Z}}
+\def\z{{\bf z}}
+\def\0{{\bf 0}}
+\def\1{{\bf 1}}
+
+
+\def\hx{\hat{\bf x}}
+\def\tx{\tilde{\bf x}}
+\def\ty{\tilde{\bf y}}
+\def\tz{\tilde{\bf z}}
+\def\hd{\hat{d}}
+\def\HD{\hat{\bf D}}
+
+\def\MF{{\mathcal F}}
+\def\MG{{\mathcal G}}
+\def\MI{{\mathcal I}}
+\def\MN{{\mathcal N}}
+\def\MO{{\mathcal O}}
+\def\MT{{\mathcal T}}
+\def\MX{{\mathcal X}}
+\def\SW{{\mathcal {SW}}}
+\def\MW{{\mathcal W}}
+\def\MY{{\mathcal Y}}
+\def\BR{{\mathbb R}}
+\def\BP{{\mathbb P}}
+
+\def\bet{\mbox{\boldmath$\beta$\unboldmath}}
+\def\epsi{\mbox{\boldmath$\epsilon$}}
+
+\def\etal{{\em et al.\/}\,}
+\def\tr{\mathrm{tr}}
+\def\rk{\mathrm{rk}}
+\def\diag{\mathrm{diag}}
+\def\dg{\mathrm{dg}}
+\def\argmax{\mathop{\rm argmax}}
+\def\argmin{\mathop{\rm argmin}}
+\def\vecd{\mathrm{vec}}
+
+\def\ph{\mbox{\boldmath$\phi$\unboldmath}}
+\def\vp{\mbox{\boldmath$\varphi$\unboldmath}}
+\def\pii{\mbox{\boldmath$\pi$\unboldmath}}
+\def\Ph{\mbox{\boldmath$\Phi$\unboldmath}}
+\def\pss{\mbox{\boldmath$\psi$\unboldmath}}
+\def\Ps{\mbox{\boldmath$\Psi$\unboldmath}}
+\def\muu{\mbox{\boldmath$\mu$\unboldmath}}
+\def\Si{\mbox{\boldmath$\Sigma$\unboldmath}}
+\def\lam{\mbox{\boldmath$\lambda$\unboldmath}}
+\def\Lam{\mbox{\boldmath$\Lambda$\unboldmath}}
+\def\Gam{\mbox{\boldmath$\Gamma$\unboldmath}}
+\def\Oma{\mbox{\boldmath$\Omega$\unboldmath}}
+\def\De{\mbox{\boldmath$\Delta$\unboldmath}}
+\def\de{\mbox{\boldmath$\delta$\unboldmath}}
+\def\Tha{\mbox{\boldmath$\Theta$\unboldmath}}
+\def\tha{\mbox{\boldmath$\theta$\unboldmath}}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{definition}{Definition}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{example}{Example}[section]
+
+
+\def\probin{\mbox{\rotatebox[origin=c]{90}{$\vDash$}}}
+
+\def\calA{{\cal A}}
+
+
+
+%this is a comment
+
+%use this as a template only... you may not need the subsections,
+%or lists however they are placed in the document to show you how
+%do it if needed.
+
+
+%THINGS TO REMEMBER
+%to compile a latex document - latex filename.tex
+%to view the document        - xdvi filename.dvi
+%to create a ps document     - dvips filename.dvi
+%to create a pdf document    - dvipdf filename.dvi
+%{\bf TEXT}                  - bold font TEXT
+%{\it TEXT}                  - italic TEXT
+%$ ... $                     - places ... in math mode on same line
+%$$ ... $$                   - places ... in math mode on new line
+%more info at www.cs.wm.edu/~mliskov/cs423_fall04/tex.html
+
+
+\setlength{\oddsidemargin}{.25in}
+\setlength{\evensidemargin}{.25in}
+\setlength{\textwidth}{6in}
+\setlength{\topmargin}{-0.4in}
+\setlength{\textheight}{8.5in}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\notes}[5]{
+	\renewcommand{\thepage}{#1 - \arabic{page}}
+	\noindent
+	\begin{center}
+	\framebox{
+		\vbox{
+		\hbox to 5.78in { { \bf Introduction to Data Mining}
+		\hfill #2}
+		\vspace{1mm}
+		\hbox to 5.78in { {\Large \hfill #5 \hfill} }
+		\vspace{2mm}
+		\hbox to 5.78in { {\it #3 \hfill #4} }
+		}
+	}
+	\end{center}
+	\vspace*{4mm}
+}
+
+\newcommand{\ho}[5]{\notes{#1}{2011.04.29}{}{3080100742, Yizhi Liu}{Homework #2}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%begins a LaTeX document
+\begin{document}
+
+\ho{1}{4}{Moses Liskov}{Name}{Lecture title}
+\section{Implementation}
+In this section I discuss the implementation of
+\emph{Kmeans}, \emph{Kmedoids}, \emph{Gaussian Mixture Model} and
+\emph{Spectral Clustering}. \\
+Suppose that the dimension of the data is $D$, the $\#$ of the data is $N$, the $\#$ of the clusters is $K$.
+\subsection{Kmeans and Kmedoids}
+The idea of Kmeans is simple. I pick the initial points randomly according to the given $K$. Different from Kmeans,
+Kmedoids uses the 'medoids' instead of 'cendoids' as the representation of a certain cluster.
+
+\subsection{Gaussian Mixture Model (GMM)}
+In the Gaussian mixture model, we need to find out the solution to maximize the following likelihood:
+$$
+L(\pi_k,\bm{\mu}_k,\bm{\Sigma}_k) = \sum\limits_{i=1}^N\log\left(
+\sum\limits_{k=1}^K\pi_k\mathcal{N}(\bm{x}^{(i)};\bm{\mu}_k,\bm{\Sigma}_k)\right)
+$$
+Use \emph{EM} algorithm to solve the above problem, we have
+$$\pi_k^{(t)}=\frac{\sum_{i=1}^N Q^i(\bm{z}_k^{(i)})}{N}$$
+$$\bm{\mu}_k^{(t)}=\frac{\sum_{i=1}^N\bm{x}^{(i)}Q^i(\bm{z}_k^{(i)})}{\sum_{i=1}^N Q^i(\bm{z}_k^{(i)})}$$
+$$\bm{\Sigma}_k^{(t)}=\frac{\sum_{i=1}^N(\bm{x}^{(i)}-\bm{\mu}_k)(\bm{x}^{(i)}-\bm{\mu}_k)^T Q^i(\bm{z}_k^{(i)})}
+{\sum_{i=1}^N Q^i(\bm{z}_k^{(i)})}$$
+where
+$$Q^i(\bm{z}_k^{(i)}) = \frac{\pi_k^{(t-1)}\mathcal{N}\left(\bm{x}^{(i)};\bm{\mu}_k^{(t-1)},\bm{\Sigma}_k^{(t-1)}\right)}
+{\sum_{k=1}^K\pi_k^{(t-1)}\mathcal{N}\left(\bm{x}^{(i)};\bm{\mu}_k^{(t-1)},\bm{\Sigma}_k^{(t-1)}\right)}$$
+We assume the $i$th data $\bm{x}^{(i)}$ is selected from the specific $k$th Gaussian models with probability $\pi_k$.
+Then $Q^i(\bm{z}_k^{(i)})$ represents the probability that the $i$th data belongs to the $k$th Gaussian model, which can be
+used for clustering. Technically, we simply calculate the $k_i = \argmax\limits_k Q^i(\bm{z}_k^{(i)})$ and assign $\bm{x}^{(i)}$
+to the $k_i$ cluster. \\
+However, the covariance matrix $\bm{\Sigma}$ might be nonsingular, we use \emph{PCA} to reduce the dimension of the dataset first.
+When determining the number of PCs, I use the ratio that the summation of the first biggest $p$ eigenvalues to the summation of the whole eigenvalues.
+The ratio varies from $0.5$ to $0.8$ according to different datasets.
+
+\subsection{Spectral Clustering}
+I simply define the adjacency matrix $\bm{W}$ as following:
+$$w_{ij} = \frac{1}{\|\bm{x}_i-\bm{x}_j\|_1} \quad (i\ne j) \qquad \text{and}
+\qquad w_{ii} = 0$$
+
+
+\section{Experiments}
+Table \ref{table:accuracy} shows the accuracy of the test.
+Table \ref{table:time-train} shows the running time.\\
+All the experiments were implemented in MATLAB on a PC
+with Intel Core i3@2.93GHz and 4GB memory.
+\begin{table}[t]
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline \hline \\
+Machine learning & Statistics \\ \hline
+networks, graphs &  models
+\\ \hline
+weights &  parameters \\  \hline
+learning &  fitting or
+estimation
+\\ \hline
+generalization & test set performance \\ \hline supervised learning
+& regression/classification \\ \hline unsupervised learning &
+density estimation, clustering \\ \hline
+large scale $=1,000,000$ &
+large scale $= 5,000$ \\ \hline
+large grant $= 1,000,000$ USD &
+large grant $= 50,000$ USD \\  \hline
+nice place to have a meeting: & nice place to have a meeting: \\
+Snowbird, Utah, French Alps & Las Vegas in August \\ \hline
+\end{tabular}
+\end{center}
+\begin{table}
+
+\begin{table}[t]
+\begin{center}
+\caption{Performance of classification on MNIST and COIL20 databases.}
+\label{table:accuracy}
+\small{
+\begin{tabular}{|c|c|c|cc|ccccc|}
+\hline
+\multirow{2}*{\textbf{Data set}} & \multirow{2}*{Kmeans} &\multirow{2}*{Kmedoids}
+& \multirow{2}*{GMM} & \multirow{2}*{Spectral}\\
+&&&&\\
+\hline \hline \hline
+MNIST-5.1& 87.95\%& 50.68\%& 71.93\%& 63.75\%\\
+MNIST-5.2& 64.49\%& 65.45\%& 76.95\%& 57.24\%\\
+MNIST-5.3& 81.78\%& 62.42\%& 72.54\%& 61.43\%\\
+MNIST-5.4& 58.70\%& 50.17\%& 66.90\%& 45.08\%\\
+MNIST-5.5& 70.89\%& 48.24\%& 66.60\%& 43.53\%\\
+MNIST-5.6& 74.83\%& 50.34\%& 57.08\%& 44.96\%\\
+MNIST-5.7& 64.45\%& 42.95\%& 49.98\%& 54.74\%\\
+MNIST-5.8& 68.48\%& 46.75\%& 69.69\%& 64.15\%\\
+MNIST-5.9& 49.18\%& 38.66\%& 49.03\%& 52.61\%\\
+MNIST-5.10& 61.12\%& 45.23\%& 50.70\%& 58.99\%\\
+\hline
+MNIST-7.1& 67.43\%& 38.64\%& 73.78\%& 61.11\%\\
+MNIST-7.2& 59.50\%& 61.04\%& 66.56\%& 52.99\%\\
+MNIST-7.3& 64.52\%& 44.52\%& 70.62\%& 51.26\%\\
+MNIST-7.4& 60.03\%& 46.92\%& 54.05\%& 42.88\%\\
+MNIST-7.5& 52.03\%& 42.41\%& 64.57\%& 55.23\%\\
+MNIST-7.6& 50.82\%& 52.85\%& 64.67\%& 59.32\%\\
+MNIST-7.7& 64.71\%& 39.24\%& 77.83\%& 52.40\%\\
+MNIST-7.8& 57.17\%& 50.18\%& 73.87\%& 52.11\%\\
+MNIST-7.9& 50.34\%& 43.36\%& 64.11\%& 59.94\%\\
+MNIST-7.10& 57.58\%& 46.59\%& 56.75\%& 63.86\%\\
+\hline
+COIL20-5.1& 59.44\%& 59.17\%& 89.72\%& 59.44\%\\
+COIL20-5.2& 53.06\%& 39.72\%& 54.17\%& 56.39\%\\
+COIL20-5.3& 100.00\%& 82.78\%& 72.78\%& 42.50\%\\
+COIL20-5.4& 86.67\%& 81.67\%& 78.33\%& 55.56\%\\
+COIL20-5.5& 90.28\%& 86.94\%& 46.67\%& 71.94\%\\
+COIL20-5.6& 91.67\%& 64.17\%& 71.11\%& 71.67\%\\
+COIL20-5.7& 49.44\%& 69.17\%& 82.50\%& 84.44\%\\
+COIL20-5.8& 71.39\%& 77.50\%& 63.61\%& 70.56\%\\
+COIL20-5.9& 90.00\%& 53.61\%& 66.67\%& 51.67\%\\
+COIL20-5.10& 70.56\%& 63.89\%& 48.06\%& 67.22\%\\
+\hline
+COIL20-10.1& 57.08\%& 43.47\%& 48.75\%& 54.86\%\\
+COIL20-10.2& 58.47\%& 50.14\%& 48.19\%& 56.67\%\\
+COIL20-10.3& 66.39\%& 65.83\%& 58.33\%& 57.36\%\\
+COIL20-10.4& 72.50\%& 68.33\%& 63.75\%& 49.17\%\\
+COIL20-10.5& 62.50\%& 49.86\%& 72.50\%& 45.56\%\\
+COIL20-10.6& 83.33\%& 78.33\%& 63.33\%& 64.44\%\\
+COIL20-10.7& 67.78\%& 58.33\%& 70.00\%& 56.53\%\\
+COIL20-10.8& 54.58\%& 55.28\%& 55.69\%& 49.86\%\\
+COIL20-10.9& 49.75\%& 40.41\%& 42.78\%& 44.72\%\\
+COIL20-10.10& 52.78\%& 46.67\%& 57.64\%& 56.81\%\\
+\hline
+\end{tabular}
+}
+\end{center}
+\end{table}
+\begin{table}[t]
+\begin{center}
+\caption{Running time (seconds) of classification
+on MNIST and COIL20 databases.}
+\label{table:time-train}
+\small{
+\begin{tabular}{|c|c|c|cc|ccccc|}
+\hline
+\multirow{2}*{\textbf{Data set}} & \multirow{2}*{Kmeans} &\multirow{2}*{Kmedoids}
+& \multirow{2}*{GMM} & \multirow{2}*{Spectral}\\
+&&&&\\
+\hline \hline \hline
+MNIST-5.1& 1.45& 33.21& 29.60& 2.93\\
+MNIST-5.2& 1.41& 27.21& 43.48& 1.23\\
+MNIST-5.3& 0.82& 85.33& 25.96& 1.09\\
+MNIST-5.4& 2.58& 69.61& 38.45& 0.83\\
+MNIST-5.5& 2.15& 20.87& 42.71& 0.38\\
+MNIST-5.6& 5.28& 37.20& 41.05& 0.84\\
+MNIST-5.7& 3.01& 31.90& 66.89& 0.97\\
+MNIST-5.8& 2.23& 11.70& 26.53& 0.59\\
+MNIST-5.9& 3.53& 19.22& 27.99& 1.03\\
+MNIST-5.10& 1.51& 22.04& 13.40& 0.60\\
+\hline
+MNIST-7.1& 3.87& 78.19& 75.49& 1.42\\
+MNIST-7.2& 4.03& 65.08& 101.53& 1.25\\
+MNIST-7.3& 6.04& 39.79& 81.36& 0.92\\
+MNIST-7.4& 3.70& 29.28& 41.66& 0.56\\
+MNIST-7.5& 5.31& 98.76& 51.74& 2.70\\
+MNIST-7.6& 3.91& 35.18& 75.24& 0.90\\
+MNIST-7.7& 12.01& 63.57& 69.01& 2.49\\
+MNIST-7.8& 4.01& 60.83& 72.74& 1.34\\
+MNIST-7.9& 16.93& 29.01& 64.22& 2.36\\
+MNIST-7.10& 7.66& 60.34& 54.12& 2.29\\
+\hline
+COIL20-5.1& 0.23& 1.97& 2.37& 0.13\\
+COIL20-5.2& 0.28& 1.71& 2.03& 0.13\\
+COIL20-5.3& 0.29& 1.44& 0.88& 0.05\\
+COIL20-5.4& 0.23& 1.88& 2.14& 0.12\\
+COIL20-5.5& 0.16& 1.79& 1.50& 0.06\\
+COIL20-5.6& 0.16& 1.47& 2.27& 0.06\\
+COIL20-5.7& 0.14& 2.64& 2.19& 0.05\\
+COIL20-5.8& 0.23& 1.17& 1.71& 0.04\\
+COIL20-5.9& 0.23& 1.20& 2.30& 0.07\\
+COIL20-5.10& 0.12& 1.86& 2.16& 0.11\\
+\hline
+COIL20-10.1& 1.09& 4.97& 30.84& 0.21\\
+COIL20-10.2& 1.08& 5.88& 11.25& 0.28\\
+COIL20-10.3& 0.97& 6.90& 10.94& 0.31\\
+COIL20-10.4& 1.02& 6.54& 6.67& 0.23\\
+COIL20-10.5& 0.61& 5.08& 10.78& 0.22\\
+COIL20-10.6& 1.08& 4.00& 3.76& 0.44\\
+COIL20-10.7& 0.54& 4.43& 6.66& 0.16\\
+COIL20-10.8& 1.46& 12.05& 12.47& 0.78\\
+COIL20-10.9& 1.47& 12.85& 11.58& 0.37\\
+COIL20-10.10& 1.39& 10.43& 31.51& 0.28\\
+\hline
+\end{tabular}
+}
+\end{center}
+\end{table}
+
+\section{Conclusion}
+It seems that Kmeans can get the best accuracy on most of the databases, while GMM performances more robust.
+Kmedoids runs much slower than Kmeans, but the technology it uses can fit the data which is not in Euclidean space.
+Spectral clustering did not performance as well as I had expected.
+All of these methods run better on COIL20, which contains more information of the image than MNIST.
+The dimension does not have great impact on the running time, while the $\#$ of data does.
+It seems whether we remove the mean at the end of PCA do not impact the final accuracy.
+
+\end{document}
+
+

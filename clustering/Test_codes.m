@@ -1,0 +1,21 @@
+clc;
+% load('hw4data/MNIST/MNIST.mat');
+% load('hw4data/MNIST/7Class/10.mat');
+load('hw4data/COIL20/COIL20.mat');
+load('hw4data/COIL20/10Class/10.mat');
+X=fea(sampleIdx,:);
+Test_Labels = gnd(sampleIdx,:);
+X(:,zeroIdx)=[];
+%mkmeans  mkmedoids  mgmm  spectral_clustering
+[predict, accuracy] = mkmeans(X, 10, Test_Labels);
+disp(['The accuracy: ', num2str(accuracy)]);
+disp('---------');
+[predict, accuracy] = mkmedoids(X, 10, Test_Labels);
+disp(['The accuracy: ', num2str(accuracy)]);
+disp('---------');
+[predict, accuracy] = mgmm(X, 10, Test_Labels, 0.5);
+disp(['The accuracy: ', num2str(accuracy)]);
+disp('---------');
+[predict, accuracy] = spectral_clustering(X, 10, Test_Labels);
+disp(['The accuracy: ', num2str(accuracy)]);
+disp('---------');

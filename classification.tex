@@ -1,0 +1,397 @@
+\documentclass[8pt]{article}
+\usepackage{graphicx} % more modern
+%\usepackage{times}
+\usepackage{helvet}
+\usepackage{courier}
+\usepackage{epsf}
+\usepackage{amsmath,amssymb,amsfonts,verbatim}
+\usepackage{subfigure}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{latexsym}
+\usepackage{algpseudocode}
+\usepackage{algorithm}
+%\usepackage{algorithmic}
+\usepackage{multirow}
+\usepackage{xcolor}
+
+\usepackage{bm}
+\usepackage{fourier}
+\usepackage{enumerate}
+\usepackage{extarrows}
+\usepackage{hyperref}
+
+\newcommand{\trinorm}{{\;\left\vert\left\vert\left\vert\!\;}}
+\def\abovespace{\abovestrut{0.20in}}
+\def\aroundspace{\abovestrut{0.20in}\belowstrut{0.10in}}
+\def\belowspace{\belowstrut{0.10in}}
+\def\abovestrut#1{\rule[0in]{0in}{#1}\ignorespaces}
+\def\belowstrut#1{\rule[-#1]{0in}{#1}\ignorespaces}
+
+\def\A{{\bf A}}
+\def\a{{\bf a}}
+\def\B{{\bf B}}
+\def\b{{\bf b}}
+\def\C{{\bf C}}
+\def\c{{\bf c}}
+\def\D{{\bf D}}
+\def\d{{\bf d}}
+\def\E{{\bf E}}
+\def\e{{\bf e}}
+\def\F{{\bf F}}
+\def\f{{\bf f}}
+\def\G{{\bf G}}
+\def\g{{\bf g}}
+\def\k{{\bf k}}
+\def\K{{\bf K}}
+\def\H{{\bf H}}
+\def\I{{\bf I}}
+\def\L{{\bf L}}
+\def\M{{\bf M}}
+\def\m{{\bf m}}
+\def\n{{\bf n}}
+\def\N{{\bf N}}
+\def\BP{{\bf P}}
+\def\R{{\bf R}}
+\def\BS{{\bf S}}
+\def\s{{\bf s}}
+\def\t{{\bf t}}
+\def\T{{\bf T}}
+\def\U{{\bf U}}
+\def\u{{\bf u}}
+\def\V{{\bf V}}
+\def\v{{\bf v}}
+\def\W{{\bf W}}
+\def\w{{\bf w}}
+\def\X{{\bf X}}
+\def\Y{{\bf Y}}
+\def\Q{{\bf Q}}
+\def\x{{\bf x}}
+\def\y{{\bf y}}
+\def\Z{{\bf Z}}
+\def\z{{\bf z}}
+\def\0{{\bf 0}}
+\def\1{{\bf 1}}
+
+
+\def\hx{\hat{\bf x}}
+\def\tx{\tilde{\bf x}}
+\def\ty{\tilde{\bf y}}
+\def\tz{\tilde{\bf z}}
+\def\hd{\hat{d}}
+\def\HD{\hat{\bf D}}
+
+\def\MF{{\mathcal F}}
+\def\MG{{\mathcal G}}
+\def\MI{{\mathcal I}}
+\def\MN{{\mathcal N}}
+\def\MO{{\mathcal O}}
+\def\MT{{\mathcal T}}
+\def\MX{{\mathcal X}}
+\def\SW{{\mathcal {SW}}}
+\def\MW{{\mathcal W}}
+\def\MY{{\mathcal Y}}
+\def\BR{{\mathbb R}}
+\def\BP{{\mathbb P}}
+
+\def\bet{\mbox{\boldmath$\beta$\unboldmath}}
+\def\epsi{\mbox{\boldmath$\epsilon$}}
+
+\def\etal{{\em et al.\/}\,}
+\def\tr{\mathrm{tr}}
+\def\rk{\mathrm{rk}}
+\def\diag{\mathrm{diag}}
+\def\dg{\mathrm{dg}}
+\def\argmax{\mathop{\rm argmax}}
+\def\argmin{\mathop{\rm argmin}}
+\def\vecd{\mathrm{vec}}
+
+\def\ph{\mbox{\boldmath$\phi$\unboldmath}}
+\def\vp{\mbox{\boldmath$\varphi$\unboldmath}}
+\def\pii{\mbox{\boldmath$\pi$\unboldmath}}
+\def\Ph{\mbox{\boldmath$\Phi$\unboldmath}}
+\def\pss{\mbox{\boldmath$\psi$\unboldmath}}
+\def\Ps{\mbox{\boldmath$\Psi$\unboldmath}}
+\def\muu{\mbox{\boldmath$\mu$\unboldmath}}
+\def\Si{\mbox{\boldmath$\Sigma$\unboldmath}}
+\def\lam{\mbox{\boldmath$\lambda$\unboldmath}}
+\def\Lam{\mbox{\boldmath$\Lambda$\unboldmath}}
+\def\Gam{\mbox{\boldmath$\Gamma$\unboldmath}}
+\def\Oma{\mbox{\boldmath$\Omega$\unboldmath}}
+\def\De{\mbox{\boldmath$\Delta$\unboldmath}}
+\def\de{\mbox{\boldmath$\delta$\unboldmath}}
+\def\Tha{\mbox{\boldmath$\Theta$\unboldmath}}
+\def\tha{\mbox{\boldmath$\theta$\unboldmath}}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{definition}{Definition}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{example}{Example}[section]
+
+
+\def\probin{\mbox{\rotatebox[origin=c]{90}{$\vDash$}}}
+
+\def\calA{{\cal A}}
+
+
+
+%this is a comment
+
+%use this as a template only... you may not need the subsections,
+%or lists however they are placed in the document to show you how
+%do it if needed.
+
+
+%THINGS TO REMEMBER
+%to compile a latex document - latex filename.tex
+%to view the document        - xdvi filename.dvi
+%to create a ps document     - dvips filename.dvi
+%to create a pdf document    - dvipdf filename.dvi
+%{\bf TEXT}                  - bold font TEXT
+%{\it TEXT}                  - italic TEXT
+%$ ... $                     - places ... in math mode on same line
+%$$ ... $$                   - places ... in math mode on new line
+%more info at www.cs.wm.edu/~mliskov/cs423_fall04/tex.html
+
+
+\setlength{\oddsidemargin}{.25in}
+\setlength{\evensidemargin}{.25in}
+\setlength{\textwidth}{6in}
+\setlength{\topmargin}{-0.4in}
+\setlength{\textheight}{8.5in}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\notes}[5]{
+	\renewcommand{\thepage}{#1 - \arabic{page}}
+	\noindent
+	\begin{center}
+	\framebox{
+		\vbox{
+		\hbox to 5.78in { { \bf Introduction to Data Mining}
+		\hfill #2}
+		\vspace{1mm}
+		\hbox to 5.78in { {\Large \hfill #5 \hfill} }
+		\vspace{2mm}
+		\hbox to 5.78in { {\it #3 \hfill #4} }
+		}
+	}
+	\end{center}
+	\vspace*{4mm}
+}
+
+\newcommand{\ho}[5]{\notes{#1}{2011.04.16}{}{3080100742, Yizhi Liu}{Homework #2}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%begins a LaTeX document
+\begin{document}
+
+\ho{1}{3}{Moses Liskov}{Name}{Lecture title}
+\section{Implementation}
+In this section I discuss the implementation of
+\emph{Ridge Regression}, \emph{Naive Bayes}(with Gaussian and smoothing) and
+\emph{K-Nearest Neighbor}. \\
+Suppose that the dimension of the data is $d$, the $\#$ of the data is $m$ and the $\#$ of classes is $c$.
+In each class, the $\#$ of the data is $n$.
+\subsection{Ridge Regression}
+The Ridge Regression is based on the following model:
+$$\bm{a}=\argmin\limits_{\bm{a}}\left(\bm{y}-\bm{Xa}\right)^T
+\left(\bm{y}-\bm{Xa}\right)+\lambda\bm{a}^T\bm{a}
+$$
+where each row of $\bm{X}\in\BR^{n\times d}$ represents a data,
+$\bm{a}$ is the parameter we want to learn form the train-data.
+Here $\lambda$ is the tune parameter.
+In my classifier, I form the $\mathop{\bm{A}}\limits_{d\times c}$ as 
+$\bm{A}=\left(\bm{a}_1,\bm{a}_2,\dots,\bm{a}_n\right)$, and
+$\mathop{\bm{Y}}\limits_{n\times c}=
+\left(
+\begin{array}{c}
+ \bm{y}_1  \\
+ \bm{y}_2 \\
+ \vdots \\
+ \bm{y}_n
+\end{array}
+\right)$  where the $j$th element of $\bm{y}_i$ represents whether this $i$th data belongs
+to the $j$th class. For instance, if the first data belongs to the first class, then $Y_{11}=1$ and 
+$Y_{1j}=0$ for $j\ne 1$. Now the regression model becomes
+$$\bm{A}=\argmin\limits_{\bm{A}}\left(\|\bm{Y}-\bm{XA}\|_F^2+\lambda\|\bm{A}^T\bm{A}\|_F^2\right)$$
+With derivation we have
+$$\left(\bm{X}^T\bm{X}+\lambda\bm{I}\right)\bm{A}=\bm{X}^T\bm{Y}$$
+For those $d\le n$, immediately we have $\bm{A}=\left(\bm{X}^T\bm{X}+\lambda\bm{I}\right)^{-1}\bm{X}^T\bm{Y}$.
+Otherwise, since $d$ may be really huge, I apply following equation to reduce the cost of calculation:
+$$
+\left(\bm{A}-\mathop{\bm{BD}^{-1}\bm{C}}\limits_{d\times d}\right)^{-1}
+=\bm{A}^{-1}+\bm{A}^{-1}\bm{B}\left(\bm{D}-\mathop{\bm{CA}^{-1}\bm{B}}\limits_{n\times n}\right)^{-1}\bm{CA}^{-1}
+$$
+Thus, 
+$$
+\left(\bm{X}^T\bm{X}+\lambda\bm{I}\right)^{-1}=
+\lambda^{-1}\bm{I}+\lambda^{-1}\bm{X}^T\left(\bm{I}-\lambda^{-1}\bm{XX}^T\right)^{-1}\lambda^{-1}\bm{X}
+$$
+%full SVD for $\bm{X}$, such
+%$\mathop{\bm{X}}\limits_{n\times d}=\mathop{\bm{U}}\limits_{n\times n}
+%\mathop{\bm{\Sigma}}\limits_{n\times d}\mathop{\bm{V}^T}\limits_{d\times d}$. Then,
+%\begin{align}\nonumber
+%\begin{split}
+%&\quad \left(\bm{V}\bm{\Sigma}^T\bm{U}^T\bm{U}\bm{\Sigma V}^T+\lambda\bm{I}\right)
+%    \bm{a} = \bm{V\Sigma}^T\bm{U}\bm{y} \\
+%&\Rightarrow
+%\left(\bm{\Sigma}^T\bm{\Sigma}+\lambda\bm{I}\right)\bm{V}^T\bm{a}=\bm{\Sigma}^T\bm{U}^T\bm{y} \\
+%&\Rightarrow
+%\bm{a}=\bm{V}\left(\bm{\Sigma}^T\bm{\Sigma}+\lambda\bm{I}\right)^{-1}
+%    \bm{\Sigma}^T\bm{U}^T\bm{y}
+%\end{split}
+%\end{align}
+%Notice that if $\lambda\ne 0$, then $\left(\bm{\Sigma}^T\bm{\Sigma}+\lambda\bm{I}\right)$
+%must be nonsingular. Moreover, it is diagonal, which is easy to calculate the inverse.\\
+In the \emph{Test} step, the classifier calculate $y=\bm{A}_i^T\bm{x}$
+where $\bm{x}$ is a specific data.
+and then find $m=\argmax\limits_{i}y_i$. The $m$th class is the result.
+
+\subsection{Naive Bayes (with Gaussian distribution)}
+In the \emph{Training} step, I calculate the mean $\mu$ and the variance $\sigma$
+for each feature of every class.\\
+In the \emph{Test} step, I use \emph{Log Gaussian Distribution}, suppose all the features are \textit{i.i.d}.
+$$
+p_i=\sum\limits_{j=1}^d
+\left(-\log(\sqrt{2\pi}\sigma_j)-\frac{(x-\mu_j)^2}{2\sigma_j^2}
+\right)
+$$
+Then the class it belongs to is $\argmax\limits_i p_i$ for $i=1\dots c$.\\
+Notice that I also add prior for each class.
+
+\subsection{Naive Bayes (with smoothing)}
+I use another method for the Naive Bayes in this subsection.
+First the classifier calculate the mean $\mu_i$ for each feature.
+Then for each class of the training data, it split the data of each feature into two sets,
+$\mathcal{G}_1$ is those bigger than $\mu$, $\mathcal{G}_2$ is those smaller than $\mu$.
+For each set, I calculate the likelihood
+$$p(x\in\mathcal{G}_1|C)=\frac{(\#\  \text{of}\  x\in\mathcal{G}_1) + \alpha}{n + \alpha}
+\qquad
+p(x\in\mathcal{G}_2|C)=\frac{(\#\  \text{of}\  x\in\mathcal{G}_2) + \alpha}{n + \alpha}
+$$
+Now in the \emph{Test} step, the classifier take each feature and decide whether it is in
+$\mathcal{G}_1$ or $\mathcal{G}_2$, thus get the likelihood. With the \text{i.i.d} assumption,
+we can calculate the posterior and decide which class it belongs to. \\
+Notice that I also add prior for each class.
+
+\subsection{K-Nearest Neighbor}
+We do not need to train in this method.
+The classifier simply compare the test data with each of the train data,
+pick the $k$-nearest neighbor, and find the class appears the most.\\
+I use Manhattan distance for this method,
+\textit{i.e.}, $D=\sum\limits_{i=1}^d|y_i-x_i|$
+
+\section{Experiments}
+I set $\alpha=1$ in the smooth Naive Bayes method.
+And $\lambda=0.5,1,2,5,10$ in the Ridge Regression. \\
+Table \ref{table:datasets} shows the information of the datasets.
+Table \ref{table:accuracy} shows the accuracy of the test.
+Table \ref{table:time-train} and Table \ref{table:time-test}
+show the training-time and the test-time respectively.\\
+All the experiments were implemented in MATLAB on a PC
+with Intel Core i3@2.93GHz and 4GB memory.
+\begin{table}[t]
+\caption{Descriptions of the datasets used in classification;
+$d$---\# of features, $n$---\# of training instances, $m$---\#of test instances}
+\label{table:datasets}
+\begin{center}
+\begin{small}
+\begin{sc}
+\begin{tabular}{p{2.5cm}p{1.5cm}p{1.5cm}lr}
+\hline
+\abovespace\belowspace
+Data set& $d$ & $n$ & $m$ \\
+\hline
+\abovespace
+ORL & 4096& 280& 120&  \\
+Reuters  & 500& 8003& 200& \\
+\belowspace
+USPS & 256& 8298& 1000&\\
+\hline
+\end{tabular}
+\end{sc}
+\end{small}
+\end{center}
+\end{table}
+
+\begin{table}[t]
+\begin{center}
+\caption{Performance of classification on ORL, Reuters and USPS databases.}
+\label{table:accuracy}
+\small{
+\begin{tabular}{|c|c|c|cc|ccccc|}
+\hline
+\multirow{2}*{\textbf{Data set}} & \multirow{2}*{KNN} &\multirow{2}*{SVM}
+& \multicolumn{2}{|c|}{Naive Bayes} & \multicolumn{5}{|c|}{Ridge Regression}\\
+&&&Gaussian&Smoothing&0.5&1&2&5&10 \\
+\hline \hline \hline
+ORL&90.83\%& 72.50\% &87.50\%&80.83\%&95.00\%&95.00\%&95.00\%&95.00\%&95.00\% \\
+Reuters&46.50\%& 26.5\% &49.00\%&17.00\%&32.50\%&33.00\%&33.00\%&33.00\%&33.00\% \\
+USPS&95.00\%& 93.90\% &76.00\%&80.10\%&87.50\%&87.50\%&87.80\%&88.00\%&88.00\% \\
+\hline
+\end{tabular}
+}
+\end{center}
+\end{table}
+
+\begin{table}[t]
+\begin{center}
+\caption{Training time (seconds) of classification
+on ORL, Reuters and USPS databases.}
+\label{table:time-train}
+\small{
+\begin{tabular}{|c|c|c|cc|ccccc|}
+\hline
+\multirow{2}*{\textbf{Data set}} & \multirow{2}*{KNN} &\multirow{2}*{SVM}
+& \multicolumn{2}{|c|}{Naive Bayes} & \multicolumn{5}{|c|}{Ridge Regression}\\
+&&&Gaussian&Smoothing&0.5&1&2&5&10 \\
+\hline \hline \hline
+ORL&0& 1.64 &0.06&1.19&3.17&3.24&3.12&3.07&3.43 \\
+Reuters&0& 12.36 &51.78&48.55&0.98&1.03&0.97&0.94&1.00 \\
+USPS&0& 10.45 &9.11&9.27&0.28&0.31&0.28&0.31&0.27 \\
+\hline
+\end{tabular}
+}
+\end{center}
+\end{table}
+
+\begin{table}[t]
+\begin{center}
+\caption{Test time (seconds) of classification
+on ORL, Reuters and USPS databases.}
+\label{table:time-test}
+\small{
+\begin{tabular}{|c|c|c|cc|ccccc|}
+\hline
+\multirow{2}*{\textbf{Data set}} & \multirow{2}*{KNN} &\multirow{2}*{SVM}
+& \multicolumn{2}{|c|}{Naive Bayes} & \multicolumn{5}{|c|}{Ridge Regression}\\
+&&&Gaussian&Smoothing&0.5&1&2&5&10 \\
+\hline \hline \hline
+ORL&3.09& 0.49 &34.38&11.25&0&0.03&0.03&0.03&0 \\
+Reuters&33.77& 0.98 &7.08&50.51&0.03&0&0&0&0 \\
+USPS&114.81& 1.72 &4.34&10.56&0.02&0.03&0&0.03&0 \\
+\hline
+\end{tabular}
+}
+\end{center}
+\end{table}
+
+\section{Conclusion}
+It seems that KNN and Gaussian-Naive-Bayes are the most robust algorithms for the three data sets.
+All these methods do not do well on text data,\textit{i.e.}, the Reuters data, since it is very sparse.
+I think the Matrix Factorization may work well on this dataset. \\
+I downloaded LIBSVM from \url{http://www.csie.ntu.edu.tw/~cjlin/libsvm/}.
+It works very fast. For SVM, the dimension does not impact training-time much.
+Conversely, the more training data, the slower SVM runs. \\
+KNN do not spend time on training. But as we have seen, when the size of test data grows,
+the test-time grows rapidly. \\
+Ridge regression enjoys the lowest test-time of the four, and its training-time seems perfect too. 
+But when the data size or the dimension increase, the calculation for matrix inverse will become rather difficult.\\
+Naive Bayes enjoys good tradeoff between training-time and test-time.
+
+\end{document}
+
+
